@@ -5,12 +5,14 @@ import './App.css';
 import Login from './pages/login';
 import Home from './pages/home';
 import NotFound from './pages/notFound';
+
 import { supabase } from "./supabase/client";
+
 
 function App() {
   const navigate = useNavigate();
+
   useEffect(() => {
-    document.title = "charging";
     supabase.auth.onAuthStateChange((event, session) => {
       if(!session){
         navigate('/login');
@@ -19,10 +21,11 @@ function App() {
       }
     })
   }, [navigate]);
+  
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>} />
         <Route path="*" element={<NotFound/>}/>
       </Routes>
