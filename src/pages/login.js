@@ -13,7 +13,7 @@ function Login() {
                 email
             })
         } catch (error) {
-            console.log(error)
+            // console.log(error) trabajo a futuro: regresar a esta página con el error
         }
     }
     const navigate=useNavigate();
@@ -34,7 +34,7 @@ function Login() {
               navigate('/')
             }
         } catch (error) {
-            console.log(error);
+            // console.log(error); trabajo a futuro: regresar a esta página con el error
         }
         
     }, [navigate])

@@ -14,8 +14,9 @@ function Home() {
     // console.log(user.PromiseResult);
     try {
       const authToken = JSON.parse(localStorage.getItem('sb-cuplvwpdnzrkzpoxofvt-auth-token'))
+      // eslint-disable-next-line
       const datauser = authToken.user
-      console.log(datauser);
+      // console.log(datauser);
     } catch (error) {
       navigate('/login')
     }
