@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from'react-router-dom'
 import { supabase } from "../supabase/client";
+import EvalForm from '../components/EvalForm'
 
 function Home() {
   const navigate =useNavigate();
@@ -22,10 +23,12 @@ function Home() {
     }
   }, [navigate]);
   return (
-    <div>Home
+    <div>
+      <h1>Home</h1>
       <button onClick={()=>supabase.auth.signOut()}>
         Logout
       </button>
+      <EvalForm/>
     </div>
   )
 }

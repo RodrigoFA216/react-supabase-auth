@@ -22,8 +22,8 @@ function Login() {
         document.title = "Login"
         
         async function getInfoUser(){
-          const { data: { user } } = await supabase.auth.getUser()
-          return user
+            const { data: { user } } = await supabase.auth.getUser()
+            return user
         }
         try {
             const user = getInfoUser();
@@ -31,7 +31,7 @@ function Login() {
             const authToken = JSON.parse(localStorage.getItem('sb-cuplvwpdnzrkzpoxofvt-auth-token'))
             const datauser = authToken.user
             if(user.PromiseResult || datauser!=null){
-              navigate('/')
+                navigate('/')
             }
         } catch (error) {
             // console.log(error); trabajo a futuro: regresar a esta página con el error
