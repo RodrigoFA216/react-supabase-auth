@@ -1,31 +1,24 @@
-import React, {useState} from 'react'
-import { supabase } from "../supabase/client";
+import React, { useState } from 'react'
+import ListCategory from "./ListCategory";
 
 function EvalForm() {
-    const [EvalForm, setEvalForm] = useState('')
-    const [profesores, setProfesores] = useState('')
-    const handleSubbmit=e=>{
+    const [EvalName, setEvalName] = useState('')
+    // const [profesores, setProfesores] = useState('')
+    const handleSubbmit = e => {
         e.preventDefault()
-        console.log(EvalForm)
-        // supabase.from
+        console.log(EvalName)
     }
-    // useEffect(() => {
-    //     first
-    
-    //     return () => {
-    //         second
-    //     }
-    // }, [third])
-    
     return (
         <div>
             <form onSubmit={handleSubbmit}>
-                <input type="text" name="Profesor" 
-                    onChange={(e) => setEvalForm(e.target.value)}/>
+                <input type="text" name="Profesor" placeholder='Escribe el nombre del profesor a evaluar'
+                    onChange={(e) => setEvalName(e.target.value)} />
                 <button>
                     Añadir
                 </button>
             </form>
+            <br />
+            <ListCategory />
         </div>
     )
 }
